@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Layout nhanh trong 5 phút</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/grid.jpg" alt="CSS Grid" /></div>
+
+      <h1 class="reveal">🎨 CSS Grid Layout nhanh trong 5 phút</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Frontend</span><span class="badge">CSS</span><span class="badge">Grid</span>
+      </div>
+
+      <p class="reveal">Grid cực mạnh khi bạn cần layout 2 chiều. Công thức nhanh nhất là <code>auto-fit + minmax</code>.</p>
+
+      <h2 class="reveal">1) Grid auto-fit</h2>
+      <pre class="reveal"><code class="language-css">
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+      </code></pre>
+
+      <h2 class="reveal">2) Card đơn giản</h2>
+      <pre class="reveal"><code class="language-css">
+.card {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+      </code></pre>
+
+      <div class="blog-info reveal">✅ Mẹo: Grid phù hợp dashboard/layout phức tạp hơn Flexbox.</div>
+
+      <h2 class="reveal">✅ Checklist</h2>
+      <p class="reveal">- Dùng <code>minmax()</code> để card co giãn</p>
+      <p class="reveal">- Dùng <code>gap</code> thay vì margin</p>
+      <p class="reveal">- Dùng <code>auto-fit</code> để responsive tự nhiên</p>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">
+        ⬅ Quay về trang chính
+      </a>
+    </div>
+
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

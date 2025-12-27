@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodeJS + Express REST API cơ bản</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero">
+        <img src="../assets/blog/node.jpg" alt="Node Express API" />
+      </div>
+
+      <h1 class="reveal">⚡ NodeJS + Express REST API cơ bản</h1>
+
+      <div class="blog-badges reveal">
+        <span class="badge">Backend</span>
+        <span class="badge">NodeJS</span>
+        <span class="badge">Express</span>
+        <span class="badge">REST API</span>
+      </div>
+
+      <p class="reveal">
+        Express là framework nhẹ giúp bạn tạo API nhanh. Bài này hướng dẫn tạo endpoint GET + chuẩn cấu trúc code đơn giản.
+        Bạn có thể dùng mẫu này để mở rộng CRUD sau.
+      </p>
+
+      <div class="blog-info reveal">
+        ✅ <b>Mục tiêu:</b> có API <code>/api/users</code> trả về JSON và chạy được trong 1 phút.
+      </div>
+
+      <div class="blog-divider reveal"></div>
+
+      <h2 class="reveal">1) Tạo server Express</h2>
+      <pre class="reveal"><code class="language-javascript">
+const express = require("express");
+const app = express();
+
+app.get("/api/users", (req, res) => {
+  res.json([
+    { id: 1, name: "Bình" },
+    { id: 2, name: "An" }
+  ]);
+});
+
+app.listen(3000, () => console.log("Server running on port 3000"));
+      </code></pre>
+
+      <h2 class="reveal">2) Chạy server nhanh</h2>
+      <pre class="reveal"><code class="language-bash">
+npm init -y
+npm i express
+node server.js
+      </code></pre>
+
+      <h2 class="reveal">3) Tối ưu: tách routes cho sạch</h2>
+      <p class="reveal">
+        Khi project lớn, bạn nên tách routes để dễ maintain.
+      </p>
+
+      <pre class="reveal"><code class="language-javascript">
+// routes/userRoutes.js
+const router = require("express").Router();
+
+router.get("/", (req, res) => {
+  res.json([{ id: 1, name: "Bình" }]);
+});
+
+module.exports = router;
+      </code></pre>
+
+      <pre class="reveal"><code class="language-javascript">
+// server.js
+const express = require("express");
+const app = express();
+const userRoutes = require("./routes/userRoutes");
+
+app.use("/api/users", userRoutes);
+app.listen(3000);
+      </code></pre>
+
+      <div class="blog-warning reveal">
+        ⚠️ <b>Tip thực tế:</b> hãy dùng <code>nodemon</code> để tự reload server khi code thay đổi.
+      </div>
+
+      <h2 class="reveal">✅ Checklist nhanh</h2>
+      <p class="reveal">- Tạo <code>app.get()</code> endpoint</p>
+      <p class="reveal">- Trả JSON bằng <code>res.json()</code></p>
+      <p class="reveal">- Tách routes khi project lớn</p>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">
+        ⬅ Quay về trang chính
+      </a>
+    </div>
+
+    <aside class="blog-sidebar reveal">
+      <h3>📌 Mục lục</h3>
+      <div id="toc"></div>
+      <div class="blog-divider"></div>
+      <p style="font-size: 0.95rem; line-height: 1.6;">
+        💡 Tip: Nếu muốn REST đầy đủ, bạn thêm POST/PUT/DELETE + middleware validate.
+      </p>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

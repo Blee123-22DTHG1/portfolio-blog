@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Test đơn giản với Jest</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/jest.jpg" alt="Jest" /></div>
+
+      <h1 class="reveal">🧪 Unit Test đơn giản với Jest</h1>
+      <div class="blog-badges reveal"><span class="badge">Testing</span><span class="badge">Jest</span></div>
+
+      <p class="reveal">Jest giúp bạn test function nhanh, tránh bug khi refactor.</p>
+
+      <h2 class="reveal">1) Function cần test</h2>
+      <pre class="reveal"><code class="language-javascript">
+export function sum(a, b) {
+  return a + b;
+}
+      </code></pre>
+
+      <h2 class="reveal">2) Test</h2>
+      <pre class="reveal"><code class="language-javascript">
+import { sum } from "./sum";
+
+test("sum works", () => {
+  expect(sum(2,3)).toBe(5);
+});
+      </code></pre>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST API chuẩn: status code + response format</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/rest.jpg" alt="REST" /></div>
+
+      <h1 class="reveal">📦 REST API chuẩn: status code + response format</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Backend</span><span class="badge">API</span><span class="badge">Best Practice</span>
+      </div>
+
+      <p class="reveal">
+        Một API “đáng tin” cần status code đúng và response format thống nhất. Frontend sẽ dùng dễ, debug nhanh hơn.
+      </p>
+
+      <h2 class="reveal">1) Response format chuẩn</h2>
+      <pre class="reveal"><code class="language-javascript">
+res.status(200).json({
+  success: true,
+  message: "Get users successfully",
+  data: users
+});
+      </code></pre>
+
+      <h2 class="reveal">2) Error format chuẩn</h2>
+      <pre class="reveal"><code class="language-javascript">
+res.status(400).json({
+  success: false,
+  message: "Invalid input",
+  errors: [{ field: "email", message: "Email is required" }]
+});
+      </code></pre>
+
+      <div class="blog-info reveal">✅ Tip: frontend chỉ cần check <code>success</code> là xử lý được mọi case.</div>
+
+      <h2 class="reveal">✅ Status code hay dùng</h2>
+      <p class="reveal">- 200 OK / 201 Created</p>
+      <p class="reveal">- 400 Bad Request</p>
+      <p class="reveal">- 401 Unauthorized</p>
+      <p class="reveal">- 403 Forbidden</p>
+      <p class="reveal">- 404 Not Found</p>
+      <p class="reveal">- 500 Internal Server Error</p>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal">
+      <h3>📌 Mục lục</h3>
+      <div id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

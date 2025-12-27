@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploy Web lên Vercel trong 3 phút</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/vercel.jpg" alt="Vercel" /></div>
+
+      <h1 class="reveal">🚀 Deploy Web lên Vercel trong 3 phút</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Deploy</span><span class="badge">Vercel</span><span class="badge">DevOps</span>
+      </div>
+
+      <p class="reveal">
+        Vercel deploy cực nhanh cho frontend (React/Vite/NextJS). Bạn chỉ cần push code lên GitHub và connect.
+      </p>
+
+      <h2 class="reveal">1) Cài vercel CLI (optional)</h2>
+      <pre class="reveal"><code class="language-bash">
+npm i -g vercel
+vercel login
+      </code></pre>
+
+      <h2 class="reveal">2) Deploy bằng CLI</h2>
+      <pre class="reveal"><code class="language-bash">
+vercel
+      </code></pre>
+
+      <div class="blog-warning reveal">
+        ⚠️ Nếu dùng React Router, nhớ cấu hình rewrite (Vercel.json) để không bị 404 khi refresh.
+      </div>
+
+      <pre class="reveal"><code class="language-json">
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
+      </code></pre>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

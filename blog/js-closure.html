@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript: Closure là gì?</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/closure.jpg" alt="Closure" /></div>
+
+      <h1 class="reveal">🧠 JavaScript: Closure là gì? (Ví dụ thực tế)</h1>
+      <div class="blog-badges reveal"><span class="badge">JavaScript</span><span class="badge">Frontend</span></div>
+
+      <p class="reveal">Closure là khi function “nhớ” được scope bên ngoài, dù bên ngoài đã chạy xong.</p>
+
+      <h2 class="reveal">1) Ví dụ counter</h2>
+      <pre class="reveal"><code class="language-javascript">
+function createCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+      </code></pre>
+
+      <h2 class="reveal">2) Ứng dụng: module pattern</h2>
+      <pre class="reveal"><code class="language-javascript">
+function createAuth() {
+  let token = "";
+  return {
+    setToken(t) { token = t; },
+    getToken() { return token; }
+  };
+}
+      </code></pre>
+
+      <div class="blog-quote reveal">“Closure là nền tảng của callback, hooks, và rất nhiều pattern JS.”</div>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

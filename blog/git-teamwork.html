@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git cơ bản cho teamwork</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/git.jpg" alt="Git" /></div>
+
+      <h1 class="reveal">🧰 Git cơ bản cho teamwork</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Tools</span><span class="badge">Git</span>
+      </div>
+
+      <p class="reveal">
+        Làm nhóm thì Git là bắt buộc. Dưới đây là workflow đơn giản bạn nên dùng.
+      </p>
+
+      <h2 class="reveal">1) Tạo branch</h2>
+      <pre class="reveal"><code class="language-bash">
+git checkout -b feature/login
+      </code></pre>
+
+      <h2 class="reveal">2) Commit message rõ ràng</h2>
+      <pre class="reveal"><code class="language-bash">
+git commit -m "feat: add login form"
+      </code></pre>
+
+      <h2 class="reveal">3) Pull trước khi push</h2>
+      <pre class="reveal"><code class="language-bash">
+git pull origin main
+git push origin feature/login
+      </code></pre>
+
+      <div class="blog-info reveal">
+        ✅ Tip: mỗi task = 1 branch. Khi xong tạo PR để review.
+      </div>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JWT Authentication: Flow dễ hiểu</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/jwt.jpg" alt="JWT" /></div>
+
+      <h1 class="reveal">🔐 JWT Authentication: Flow dễ hiểu</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Backend</span>
+        <span class="badge">Auth</span>
+        <span class="badge">JWT</span>
+        <span class="badge">Express</span>
+      </div>
+
+      <p class="reveal">
+        JWT thường dùng để xác thực người dùng. Flow phổ biến: login → server tạo token → client lưu token →
+        request sau gửi token trong header.
+      </p>
+
+      <div class="blog-info reveal">✅ Token thường đặt trong <code>Authorization: Bearer &lt;token&gt;</code>.</div>
+
+      <h2 class="reveal">1) Tạo JWT khi login</h2>
+      <pre class="reveal"><code class="language-javascript">
+const jwt = require("jsonwebtoken");
+
+function generateToken(user) {
+  return jwt.sign(
+    { id: user.id, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: "1h" }
+  );
+}
+      </code></pre>
+
+      <h2 class="reveal">2) Middleware verify token</h2>
+      <pre class="reveal"><code class="language-javascript">
+function auth(req, res, next) {
+  const header = req.headers.authorization;
+  if (!header) return res.status(401).json({ message: "No token" });
+
+  const token = header.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+}
+      </code></pre>
+
+      <div class="blog-warning reveal">
+        ⚠️ Lưu ý: Đừng lưu token trong localStorage nếu app có nguy cơ XSS. Ưu tiên HttpOnly Cookie nếu cần bảo mật cao.
+      </div>
+
+      <h2 class="reveal">✅ Checklist nhanh</h2>
+      <p class="reveal">- Login trả token</p>
+      <p class="reveal">- Gửi token trong Authorization header</p>
+      <p class="reveal">- Middleware verify token</p>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal">
+      <h3>📌 Mục lục</h3>
+      <div id="toc"></div>
+      <div class="blog-divider"></div>
+      <p style="font-size:0.95rem;line-height:1.6">💡 Tip: Dùng refresh token để login lâu dài, tránh user đăng nhập lại liên tục.</p>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

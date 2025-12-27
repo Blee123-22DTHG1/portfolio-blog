@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TailwindCSS: Workflow cực nhanh</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <button class="exit-btn" onclick="window.open('https://example.com', '_blank')">⎋ Thoát</button>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero"><img src="../assets/blog/tailwind.jpg" alt="Tailwind" /></div>
+
+      <h1 class="reveal">🌈 TailwindCSS: Workflow cực nhanh</h1>
+      <div class="blog-badges reveal">
+        <span class="badge">Frontend</span><span class="badge">Tailwind</span><span class="badge">CSS</span>
+      </div>
+
+      <p class="reveal">
+        Tailwind là utility-first CSS. Bạn build UI nhanh vì không phải nghĩ nhiều về class naming.
+      </p>
+
+      <h2 class="reveal">1) Button đẹp nhanh</h2>
+      <pre class="reveal"><code class="language-markup">
+<button class="px-4 py-2 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700">
+  Click me
+</button>
+      </code></pre>
+
+      <h2 class="reveal">2) Card layout</h2>
+      <pre class="reveal"><code class="language-markup">
+<div class="p-6 rounded-2xl border shadow-sm hover:shadow-lg transition">
+  <h3 class="text-xl font-bold">Title</h3>
+  <p class="text-gray-600 mt-2">Description text...</p>
+</div>
+      </code></pre>
+
+      <div class="blog-quote reveal">“Tailwind giúp bạn build UI nhanh, nhưng hãy dùng component để tránh lặp class.”</div>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">⬅ Quay về trang chính</a>
+    </div>
+
+    <aside class="blog-sidebar reveal"><h3>📌 Mục lục</h3><div id="toc"></div></aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

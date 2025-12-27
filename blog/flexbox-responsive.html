@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout với Flexbox</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div class="blog-progress"><span id="progressBar"></span></div>
+
+  <div class="blog-layout">
+    <div class="blog-content">
+      <div class="blog-hero">
+        <img src="../assets/blog/flexbox.jpg" alt="Flexbox Responsive" />
+      </div>
+
+      <h1 class="reveal">🚀 Responsive Layout với Flexbox</h1>
+
+      <div class="blog-badges reveal">
+        <span class="badge">Frontend</span>
+        <span class="badge">CSS</span>
+        <span class="badge">Flexbox</span>
+        <span class="badge">Responsive</span>
+      </div>
+
+      <p class="reveal">
+        Flexbox là giải pháp cực nhanh để sắp xếp layout responsive mà không cần viết quá nhiều media query.
+        Trong bài này, mình chia sẻ công thức “thực chiến” hay dùng khi làm giao diện card/list.
+      </p>
+
+      <div class="blog-info reveal">
+        ✅ <b>Mục tiêu:</b> layout tự co giãn, tự xuống dòng, khoảng cách đều và dễ maintain.
+      </div>
+
+      <div class="blog-divider reveal"></div>
+
+      <h2 class="reveal">1) Công thức Flexbox responsive phổ biến</h2>
+      <p class="reveal">
+        Trọng tâm là: <code>display: flex</code>, <code>flex-wrap: wrap</code> và <code>flex: 1 1 250px</code>.
+        Nghĩa là mỗi card sẽ có độ rộng tối thiểu 250px, nếu màn hình nhỏ sẽ tự xuống dòng.
+      </p>
+
+      <pre class="reveal"><code class="language-css">
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  flex: 1 1 250px; /* min 250px và có thể co giãn */
+}
+      </code></pre>
+
+      <h2 class="reveal">2) Căn đều và giữ tỉ lệ đẹp</h2>
+      <p class="reveal">
+        Khi card có chiều cao khác nhau, hãy dùng <code>align-items</code> để điều chỉnh cảm giác cân đối.
+        Thường thì mình dùng <code>stretch</code> hoặc <code>flex-start</code>.
+      </p>
+
+      <pre class="reveal"><code class="language-css">
+.container {
+  align-items: stretch;  /* card có chiều cao bằng nhau */
+  /* hoặc */
+  /* align-items: flex-start; */
+}
+      </code></pre>
+
+      <div class="blog-quote reveal">
+        “Nếu bạn muốn layout card đẹp ngay từ đầu, hãy dùng gap + flex-wrap trước khi nghĩ tới grid.”
+      </div>
+
+      <h2 class="reveal">3) Kết hợp media query cho điểm nhấn</h2>
+      <p class="reveal">
+        Flexbox đã responsive tốt, nhưng bạn vẫn có thể thêm 1 media query để tăng trải nghiệm:
+        ví dụ màn hình rất nhỏ thì card full width.
+      </p>
+
+      <pre class="reveal"><code class="language-css">
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+      </code></pre>
+
+      <div class="blog-warning reveal">
+        ⚠️ <b>Lưu ý:</b> Đừng đặt <code>width</code> cứng cho card, hãy để Flexbox tự tính bằng <code>flex-basis</code>.
+      </div>
+
+      <h2 class="reveal">✅ Checklist nhanh</h2>
+      <p class="reveal">- Dùng <code>flex-wrap</code> để tự xuống dòng</p>
+      <p class="reveal">- Dùng <code>gap</code> thay vì margin</p>
+      <p class="reveal">- Dùng <code>flex: 1 1 250px</code> để card tự co giãn</p>
+
+      <a class="reveal" href="../index.html" style="display:inline-block;margin-top:2rem;font-weight:900;text-decoration:none;">
+        ⬅ Quay về trang chính
+      </a>
+    </div>
+
+    <aside class="blog-sidebar reveal">
+      <h3>📌 Mục lục</h3>
+      <div id="toc"></div>
+      <div class="blog-divider"></div>
+      <p style="font-size: 0.95rem; line-height: 1.6;">
+        💡 Tip: Flexbox rất mạnh cho layout dạng hàng/column, còn Grid phù hợp layout “2 chiều”.
+      </p>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+
+  <script src="../script.js"></script>
+  <script src="./blog-ui.js"></script>
+</body>
+</html>

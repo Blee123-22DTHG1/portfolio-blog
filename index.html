@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Hồ sơ của tôi</title>
+
+    <!-- Prism Theme (optional for code highlight on index if you show snippets later) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
+
   <body>
+    <!-- DESKTOP NAV -->
     <nav id="desktop-nav">
-      <div class="logo">John Doe</div>
+      <div class="logo">Lê Quốc Bình</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">Về tôi</a></li>
+          <li><a href="#experience">Kinh nghiệm</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#projects">Chứng chỉ</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
         </ul>
       </div>
     </nav>
+
+    <!-- HAMBURGER NAV -->
     <nav id="hamburger-nav">
-      <div class="logo">John Doe</div>
+      <div class="logo">Lê Quốc Bình</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -29,56 +41,66 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#about" onclick="toggleMenu()">Về tôi</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Kinh nghiệm</a></li>
+          <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Chứng chỉ</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Liên hệ</a></li>
         </div>
       </div>
     </nav>
+
+    <!-- PROFILE -->
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+        <img
+          src="./assets/profile-pic-11.png"
+          alt="Ảnh đại diện của Lê Quốc Bình"
+        />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">John Doe</h1>
+        <p class="section__text__p1">Xin chào, tôi là</p>
+        <h1 class="title">Lê Quốc Bình</h1>
         <p class="section__text__p2">Frontend Developer</p>
+
         <div class="btn-container">
           <button
             class="btn btn-color-2"
             onclick="window.open('./assets/resume-example.pdf')"
           >
-            Download CV
+            Tải CV
           </button>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+            Thông tin liên hệ
           </button>
         </div>
+
         <div id="socials-container">
           <img
             src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
+            alt="LinkedIn"
             class="icon"
             onclick="location.href='https://linkedin.com/'"
           />
           <img
             src="./assets/github.png"
-            alt="My Github profile"
+            alt="Github"
             class="icon"
             onclick="location.href='https://github.com/'"
           />
         </div>
       </div>
     </section>
+
+    <!-- ABOUT -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+      <p class="section__text__p1">Thông tin thêm</p>
+      <h1 class="title">Về tôi</h1>
       <div class="section-container">
         <div class="section__pic-container">
           <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
+            src="./assets/profile-pic-1.jpg"
+            alt="Ảnh giới thiệu"
             class="about-pic"
           />
         </div>
@@ -90,31 +112,40 @@
                 alt="Experience icon"
                 class="icon"
               />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+              <h3>Dự án gần đây</h3>
+              <p>
+                xem chi tiết tại <br />
+                <img
+                  src="./assets/github.png"
+                  alt="Github"
+                  class="icon"
+                  onclick="location.href='https://github.com/'"
+                />
+              </p>
             </div>
+
             <div class="details-container">
               <img
                 src="./assets/education.png"
                 alt="Education icon"
                 class="icon"
               />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              <h3>Học vấn</h3>
+              <p>Đại học Công nghệ TP.HCM<br />Công nghệ phần mềm</p>
             </div>
           </div>
+
           <div class="text-container">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
+              Đam mê phát triển Frontend cho các ứng dụng Web thực tế. Tập trung
+              xây dựng giao diện responsive, tối ưu hiệu suất và nâng cao trải
+              nghiệm người dùng, hướng đến các sản phẩm trực quan, dễ sử dụng và
+              hiệu quả.
             </p>
           </div>
         </div>
       </div>
+
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -122,133 +153,123 @@
         onclick="location.href='./#experience'"
       />
     </section>
+
+    <!-- EXPERIENCE -->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <p class="section__text__p1">Khám phá</p>
+      <h1 class="title">Chuyên môn</h1>
+
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>HTML</h3><p>80%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>CSS</h3><p>80%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SASS</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>SASS</h3><p>50%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>JavaScript</h3><p>60%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>TypeScript</h3><p>70%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>Material UI</h3><p>50%</p></div>
               </article>
             </div>
           </div>
+
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title">Backend / Tools</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>PostgreSQL</h3><p>50%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>Node JS</h3><p>70%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>Express JS</h3><p>60%</p></div>
               </article>
+
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
+                <img src="./assets/checkmark.png" alt="Icon" class="icon" />
+                <div><h3>Git</h3><p>70%</p></div>
               </article>
             </div>
           </div>
         </div>
       </div>
+
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#blog'"
+      />
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <p class="section__text__p1">Bài viết & chia sẻ</p>
+      <h1 class="title">Blog lập trình</h1>
+    
+      <!-- Search + Filter -->
+      <div class="blog-toolbar">
+        <input
+          type="text"
+          id="blogSearch"
+          placeholder="🔍 Tìm bài viết..."
+          autocomplete="off"
+        />
+    
+        <select id="frameworkFilter"></select>
+
+      </div>
+    
+      <!-- Tag chips -->
+      <div class="tag-chips" id="tagChips"></div>
+    
+      <!-- Latest Post -->
+      <div class="latest-post-container">
+        <h2 class="latest-title">🆕 Bài viết mới nhất</h2>
+        <div id="latestPost"></div>
+      </div>
+    
+      <!-- Blog List -->
+      <div class="experience-details-container">
+        <div id="blogList" class="about-containers"></div>
+      </div>
+    
+      <!-- Pagination -->
+      <div class="pagination-container">
+        <button id="prevBtn" class="btn btn-color-2">Prev</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn" class="btn btn-color-2">Next</button>
+      </div>
+    
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -256,20 +277,26 @@
         onclick="location.href='./#projects'"
       />
     </section>
+    
+
+    <!-- PROJECTS / CERTIFICATES -->
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <p class="section__text__p1">Duyệt qua các thành tựu gần đây của tôi</p>
+      <h1 class="title">Chứng chỉ</h1>
+
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-1.png"
-                alt="Project 1"
+                src="./assets/Chungchi_1.png"
+                alt="Certificate 1"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title">
+              Networking Basics - Cisco Networking Academy
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -281,19 +308,22 @@
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/'"
               >
-                Live Demo
+                Link chi tiết
               </button>
             </div>
           </div>
+
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
-                alt="Project 2"
+                src="./assets/Chungchi_1.png"
+                alt="Certificate 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <h2 class="experience-sub-title project-title">
+              JavaScript Essentials 2 - Cisco Networking Academy
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -305,19 +335,22 @@
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/'"
               >
-                Live Demo
+                Link chi tiết
               </button>
             </div>
           </div>
+
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-3.png"
-                alt="Project 3"
+                src="./assets/Chungchi_2.png"
+                alt="Certificate 3"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <h2 class="experience-sub-title project-title">
+              Java Essentials 1 - Cisco Networking Academy
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -327,14 +360,15 @@
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href='https://www.credly.com/badges/f44a4114-0ce2-4408-9564-39ab88159849/public_url'"
               >
-                Live Demo
+                Link chi tiết
               </button>
             </div>
           </div>
         </div>
       </div>
+
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -342,9 +376,12 @@
         onclick="location.href='./#contact'"
       />
     </section>
+
+    <!-- CONTACT -->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <p class="section__text__p1">Liên hệ với tôi</p>
+      <h1 class="title">Liên hệ với tôi</h1>
+
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
@@ -352,8 +389,13 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+          <p>
+            <a href="mailto:huynhthanhthien4327@gmail.com"
+              >huynhthanhthien4327@gmail.com</a
+            >
+          </p>
         </div>
+
         <div class="contact-info-container">
           <img
             src="./assets/linkedin.png"
@@ -364,19 +406,28 @@
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Về tôi</a></li>
+            <li><a href="#experience">Kinh nghiệm</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#projects">Chứng chỉ</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+      <p>Bản quyền &#169; 2023 Lê Quốc Bình. Mọi quyền được bảo lưu.</p>
     </footer>
+
+    <!-- Blog data must be loaded BEFORE script.js -->
+    <script src="blogData.js"></script>
     <script src="script.js"></script>
+
+    <!-- Prism Core (optional on index) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   </body>
 </html>
